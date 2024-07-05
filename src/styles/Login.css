@@ -1,0 +1,35 @@
+/* Login.css */
+.login-container {
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; /* Full width of the form container */
+}
+
+form input {
+  width: 300px; /* Full width input fields */
+  padding: 10px; /* Padding inside input fields */
+  border: 1px solid #ccc; /* Border around input fields */
+  border-radius: 5px; /* Rounded corners for input fields */
+}
+
+form button {
+  width: 300px; /* Full width buttons */
+  padding: 10px; /* Padding inside buttons */
+  margin-bottom: 10px;
+  border-radius: 20px;
+}
+
+form p {
+  text-align: center;
+  margin-bottom: 0; /* Center-align the text */
+}
+
+.check{
+  width: 15px;
+}
