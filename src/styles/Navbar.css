@@ -3,19 +3,10 @@
     justify-content: center;
     align-items: center;
     padding: 10px 30px; /* Adjust padding as needed */
-    background-color: #fff important!; /* Adjust background color as needed */
+    background-color: #fffdfd; /* Adjust background color as needed */
     height: 60px; /* Adjust height as needed */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
   }
   
-  .middle{
-    display: flex;
-    justify-content: center;
-  }
   
-  .middle a {
-    margin: 0 15px; /* Adjust spacing between links as needed */
-    text-decoration: none;
-    color: #333; /* Adjust text color as needed */
-  }
   

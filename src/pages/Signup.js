@@ -1,65 +1,84 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "../styles/Login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Validation from "./SignupValidation";
+import axios from 'axios';
 
 function Signup() {
-    const [values, setValues] = useState({
-        name: '',
-        phoneNo: '',
-        email: '',
-        password:''
-      })
-    
-      const [errors, setErrors] = useState({})
-      const handleInput = (event) => {
-        setValues(prev => ({...prev, [event.target.name]: [event.target.value]}))
-      }
-      const handleSubmit = (event) => {
-        event.preventDefault();
-        setErrors(Validation(values));
-      }
+  const [values, setValues] = useState({
+    name: '',
+    phoneNo: '',
+    email: '',
+    password: ''
+  })
+
+  const navigate = useNavigate();
+  const [errors, setErrors] = useState({});
+
+  const handleInput = (event) => {
+    setValues(prev => ({ ...prev, [event.target.name]: event.target.value }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const validationErrors = Validation(values);
+    setErrors(validationErrors);
+
+    // Check if there are no errors
+    if (Object.keys(validationErrors).length === 0) {
+      axios.post('http://localhost:8081/signup', values, { headers: { 'Content-Type': 'application/json' } })
+        .then(res => {
+          console.log(res.data);
+          navigate('/login');
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }
+    console.log("Hello");
+  };
 
   return (
     <div className="login-container">
       <div className="justify-content-center">
         <form action="" onSubmit={handleSubmit} className="mt-5">
           <h1>Sign Up</h1>
-          <div className="mb-3">
-            <label htmlFor="text"></label>
-              <input type="text" placeholder="Enter Full Name" id="text" name="name" onChange={handleInput} />
-              {errors.name && <span className="text-danger">{errors.name}</span>}
+          <div className="mb-2">
+            <label htmlFor="name"></label>
+            <input className="form-control" type="text" placeholder="Enter Full Name" id="name" name="name" onChange={handleInput} />
+            {errors.name && <span className="text-danger">{errors.name}</span>}
           </div>
-          <div className="mb-3">
-            <label htmlFor="Number"></label>
-              <input type="Number" placeholder="Enter Phone Number" id="text" name="phoneNo" onChange={handleInput} />
-              {errors.phoneNo && <span className="text-danger">{errors.phoneNo}</span>}
+          <div className="mb-2">
+            <label htmlFor="phoneNo"></label>
+            <input type="Number" className="form-control" placeholder="Enter Phone Number" id="phoneNo" name="phoneNo" onChange={handleInput} />
+            {errors.phoneNo && <span className="text-danger">{errors.phoneNo}</span>}
           </div>
-          <div className="mb-3">
+          <div className="mb-2">
             <label htmlFor="email"></label>
-              <input type="email" placeholder="Enter Email" id="email" name="email" onChange={handleInput}/>
-              {errors.email && <span className="text-danger">{errors.email}</span>}        
+            <input type="email" className="form-control" placeholder="Enter Email" id="email" name="email" onChange={handleInput} />
+            {errors.email && <span className="text-danger">{errors.email}</span>}
           </div>
-          <div className="mb-3">
+          <div className="mb-2">
             <label htmlFor="password"></label>
-              <input
-                type="password"
-                placeholder="Enter Password"
-                id="password"
-                name="password"
-                onChange={handleInput}
-              />
-              {errors.password && <span className="text-danger">{errors.password}</span>}          
+            <input
+              type="password"
+              className="form-control"
+              placeholder="Enter Password"
+              id="password"
+              name="password"
+              onChange={handleInput}
+            />
+            {errors.password && <span className="text-danger">{errors.password}</span>}
           </div>
-          <div class="input-group mb-3">
-              <input
-                class="check me-3"
-                type="checkbox"
-                value="checked"
-              /> 
-              <p>agree to terms and conditions</p>
+          <div className="input-group mb-3">
+            <input
+              className="check me-3"
+              type="checkbox"
+              value="checked"
+            />
+            <p>agree to terms and conditions</p>
           </div>
-          <button  className="btn btn-dark" type="submit">
+          <button className="btn btn-dark" type="submit">
             Sign Up
           </button>
           <Link to='/login' className="btn btn-outline-dark w-100" type="button">

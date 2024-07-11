@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../assets/sisterhoodLogo.png";
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
-function Navbar() {
+
+function Navbar({ isAuthenticated }) {
+  // Example state to manage notifications count
+  const [notificationsCount, setNotificationsCount] = useState(3);
+
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg fixed-top">
       <div className="container-fluid">
         <Link to="/" className="navbar-brand">
           <img
@@ -12,11 +16,11 @@ function Navbar() {
             alt="sisterhood logo"
             width="80"
             height="auto"
-            class="d-inline-block"
+            className="d-inline-block"
           />
         </Link>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarText"
@@ -24,29 +28,64 @@ function Navbar() {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse middle" id="navbarText">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <Link to="/">Home </Link>
+        <div className="collapse navbar-collapse" id="navbarText">
+          <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <Link to="/" className="nav-link">
+                Home
+              </Link>
             </li>
-            <li class="nav-item">
-              <Link to="/games">Games </Link>
+            <li className="nav-item">
+              <Link to="/games" className="nav-link">
+                Games
+              </Link>
             </li>
-            <li class="nav-item">
-              <Link to="/players">Players </Link>
+            <li className="nav-item">
+              <Link to="/players" className="nav-link">
+                Players
+              </Link>
             </li>
-            <li class="nav-item">
-              <Link to="/blogs">Blogs </Link>
+            <li className="nav-item">
+              <Link to="/blogs" className="nav-link">
+                Blogs
+              </Link>
             </li>
-              <li class="nav-item">
-                <Link to="/signup">Sign Up </Link>
-              </li>
-              <li class="nav-item">
-                <Link to="/login"> Login</Link>
-              </li>
           </ul>
+          {isAuthenticated ? (
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <Link to="/notifications" className="nav-link">
+                  <i className="bi bi-bell"></i>{" "}
+                  <span className="badge bg-danger">{notificationsCount}</span>
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/profile" className="nav-link">
+                  <i className="bi bi-person-circle"></i> Profile
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/logout" className="nav-link">
+                  <i className="bi bi-box-arrow-right"></i> Logout
+                </Link>
+              </li>
+            </ul>
+          ) : (
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <Link to="/signup" className="nav-link">
+                  Sign Up
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/login" className="nav-link">
+                  Login
+                </Link>
+              </li>
+            </ul>
+          )}
         </div>
       </div>
     </nav>
