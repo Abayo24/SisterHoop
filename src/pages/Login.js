@@ -4,11 +4,11 @@ import { Link, useNavigate } from "react-router-dom";
 import Validation from './LoginValidation';
 import axios from "axios";
 
-function Login() {
+function Login({ setIsAuthenticated }) {
   const [values, setValues] = useState({
     email: '',
     password: ''
-  })
+  });
 
   const navigate = useNavigate();
   const [errors, setErrors] = useState({})
@@ -22,14 +22,15 @@ function Login() {
     const validationErrors = Validation(values);
     setErrors(validationErrors);
 
-    // Check if there are no errors
     if (Object.keys(validationErrors).length === 0) {
       axios.post('http://localhost:8081/login', values)
         .then(res => {
-          if (res.data === 'Success') {
-            navigate('/member');
+          if (res.data.token) {
+            localStorage.setItem('authToken', res.data.token);
+            setIsAuthenticated(true);
+            navigate('/SisterHoop/member');
           } else {
-            alert('This user does not exist');
+            alert('Invalid email or password');
           }
         })
         .catch(err => console.log(err));
@@ -39,9 +40,9 @@ function Login() {
   return (
     <div className="login-container">
       <div className="justify-content-center">
-        <form action="" onSubmit={handleSubmit}>
+        <form action="" onSubmit={handleSubmit} className="mt-5">
           <h1>Log In</h1>
-          <div className="mb-2">
+          <div className="mb-3">
             <label htmlFor="email"></label>
             <input type="email"
               placeholder="Enter Email"
@@ -75,7 +76,7 @@ function Login() {
             <p>Remember Me</p>
           </div>
 
-          <Link to='/signup' className="btn btn-outline-dark w-100" type="button">Create Account</Link>
+          <Link to='/SisterHoop/signup' className="btn btn-outline-dark w-100" type="button">Create Account</Link>
         </form>
       </div>
     </div>

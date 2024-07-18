@@ -1,0 +1,30 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.member {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    padding: 0;
+    height: 100vh; /* Full viewport height */
+    background-color: #ffffff;
+  }
+
+  .banner-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+  }
+
+  .player{
+    width: 200px; 
+    height: 200px;
+    object-fit: cover;
+    border-radius: 100%;
+  }
+  

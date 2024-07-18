@@ -29,7 +29,7 @@ function Signup() {
       axios.post('http://localhost:8081/signup', values, { headers: { 'Content-Type': 'application/json' } })
         .then(res => {
           console.log(res.data);
-          navigate('/login');
+          navigate('/SisterHoop/login');
         })
         .catch(err => {
           console.log(err);
@@ -81,7 +81,7 @@ function Signup() {
           <button className="btn btn-dark" type="submit">
             Sign Up
           </button>
-          <Link to='/login' className="btn btn-outline-dark w-100" type="button">
+          <Link to='/SisterHoop/login' className="btn btn-outline-dark w-100" type="button">
             Login
           </Link>
         </form>

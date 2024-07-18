@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import Logo from "../assets/sisterhoodLogo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/Navbar.css";
 
-function Navbar({ isAuthenticated }) {
-  // Example state to manage notifications count
-  const [notificationsCount, setNotificationsCount] = useState(3);
+function Navbar({ isAuthenticated, onLogout }) {
+  const navigate = useNavigate();
+  const [notificationsCount] = useState(3);
+
+  const handleLogout = () => {
+    onLogout();
+    navigate("/login");
+  };
 
   return (
     <nav className="navbar navbar-expand-lg fixed-top">
@@ -31,60 +36,77 @@ function Navbar({ isAuthenticated }) {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarText">
-          <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <Link to="/" className="nav-link">
-                Home
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/games" className="nav-link">
-                Games
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/players" className="nav-link">
-                Players
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/blogs" className="nav-link">
-                Blogs
-              </Link>
-            </li>
-          </ul>
-          {isAuthenticated ? (
-            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+        {isAuthenticated ? (
+          <><ul className="navbar-nav mx-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link to="/notifications" className="nav-link">
-                  <i className="bi bi-bell"></i>{" "}
-                  <span className="badge bg-danger">{notificationsCount}</span>
+                <Link to="/SisterHood" className="nav-link">
+                  Home
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/profile" className="nav-link">
-                  <i className="bi bi-person-circle"></i> Profile
+                <Link to="/SisterHood/games" className="nav-link">
+                  Games
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/logout" className="nav-link">
-                  <i className="bi bi-box-arrow-right"></i> Logout
+                <Link to="/SisterHood/players" className="nav-link">
+                  Players
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/SisterHood/blogs" className="nav-link">
+                  Blogs
                 </Link>
               </li>
             </ul>
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li className="nav-item">
+                  <Link to="/notifications" className="nav-link">
+                    <i className="bi bi-bell"></i>{" "}
+                    <span className="badge bg-danger">{notificationsCount}</span>
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/profile" className="nav-link">
+                    <i className="bi bi-person-circle"></i> Profile
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <button className="nav-link btn btn-link" onClick={handleLogout}>
+                    <i className="bi bi-box-arrow-right"></i> Logout
+                  </button>
+                </li>
+              </ul></>
           ) : (
-            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <Link to="/signup" className="nav-link">
-                  Sign Up
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/login" className="nav-link">
-                  Login
-                </Link>
-              </li>
-            </ul>
+            <><ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+                <li className="nav-item">
+                  <a href="#home" className="nav-link">
+                    Home
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a href="#features" className="nav-link">
+                    Features
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a href="#about" className="nav-link">
+                    About
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a href="#blogs" className="nav-link">
+                    Blogs
+                  </a>
+                </li>
+              </ul>
+              <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li className="nav-item">
+                    <Link to="/SisterHoop/login" className="nav-link">
+                      Get Started
+                    </Link>
+                  </li>
+                </ul></>
           )}
         </div>
       </div>
