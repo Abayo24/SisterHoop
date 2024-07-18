@@ -26,7 +26,7 @@ function Signup() {
 
     // Check if there are no errors
     if (Object.keys(validationErrors).length === 0) {
-      axios.post('http://localhost:8081/signup', values, { headers: { 'Content-Type': 'application/json' } })
+      axios.post('http://localhost:8081/SisterHoop/signup', values, { headers: { 'Content-Type': 'application/json' } })
         .then(res => {
           console.log(res.data);
           navigate('/SisterHoop/login');
