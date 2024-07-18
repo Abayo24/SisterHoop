@@ -23,7 +23,7 @@ function Login({ setIsAuthenticated }) {
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
-      axios.post('http://localhost:8081/SisterHoop/login', values)
+      axios.post('http://localhost:8081/login', values)
         .then(res => {
           if (res.data.token) {
             localStorage.setItem('authToken', res.data.token);

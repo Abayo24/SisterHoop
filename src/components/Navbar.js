@@ -9,13 +9,13 @@ function Navbar({ isAuthenticated, onLogout }) {
 
   const handleLogout = () => {
     onLogout();
-    navigate("/login");
+    navigate("SisterHoop/login");
   };
 
   return (
     <nav className="navbar navbar-expand-lg fixed-top">
       <div className="container-fluid">
-        <Link to="/" className="navbar-brand">
+        <Link to="/SisterHoop" className="navbar-brand">
           <img
             src={Logo}
             alt="sisterhood logo"
@@ -36,34 +36,37 @@ function Navbar({ isAuthenticated, onLogout }) {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarText">
-        {isAuthenticated ? (
-          <><ul className="navbar-nav mx-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <Link to="/SisterHood" className="nav-link">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/SisterHood/games" className="nav-link">
-                  Games
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/SisterHood/players" className="nav-link">
-                  Players
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/SisterHood/blogs" className="nav-link">
-                  Blogs
-                </Link>
-              </li>
-            </ul>
-            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+          {isAuthenticated ? (
+            <>
+              <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+                <li className="nav-item">
+                  <Link to="/SisterHoop" className="nav-link">
+                    Home
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/SisterHoop/games" className="nav-link">
+                    Games
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/SisterHoop/players" className="nav-link">
+                    Players
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/SisterHoop/blogs" className="nav-link">
+                    Blogs
+                  </Link>
+                </li>
+              </ul>
+              <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li className="nav-item">
                   <Link to="/notifications" className="nav-link">
                     <i className="bi bi-bell"></i>{" "}
-                    <span className="badge bg-danger">{notificationsCount}</span>
+                    <span className="badge bg-danger">
+                      {notificationsCount}
+                    </span>
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -72,17 +75,22 @@ function Navbar({ isAuthenticated, onLogout }) {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <button className="nav-link btn btn-link" onClick={handleLogout}>
+                  <button
+                    className="nav-link btn btn-link"
+                    onClick={handleLogout}
+                  >
                     <i className="bi bi-box-arrow-right"></i> Logout
                   </button>
                 </li>
-              </ul></>
+              </ul>
+            </>
           ) : (
-            <><ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+            <>
+              <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <a href="#home" className="nav-link">
+                  <Link to="/SisterHoop" className="nav-link">
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
                   <a href="#features" className="nav-link">
@@ -95,18 +103,19 @@ function Navbar({ isAuthenticated, onLogout }) {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a href="#blogs" className="nav-link">
-                    Blogs
+                  <a href="#developer" className="nav-link">
+                    Developer
                   </a>
                 </li>
               </ul>
               <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                  <li className="nav-item">
-                    <Link to="/SisterHoop/login" className="nav-link">
-                      Get Started
-                    </Link>
-                  </li>
-                </ul></>
+                <li className="nav-item">
+                  <Link to="/SisterHoop/login" className="nav-link">
+                    Get Started
+                  </Link>
+                </li>
+              </ul>
+            </>
           )}
         </div>
       </div>
