@@ -60,7 +60,7 @@ const Home = () => {
               title="Sisterhoop Seach Feature"
               width="800"
               height="450"
-              src="https://www.youtube.com//embed/sJHKFNCEn5I"
+              src="https://www.youtube.com/watch?v=A9yEk8DtxNI"
               frameborder="0"
               allowfullscreen
             ></iframe>
