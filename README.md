@@ -27,9 +27,9 @@ Install Dependencies:
 
 bash
 Copy code
-cd frontend
+cd sisterhoop
 yarn install
-##For the backend:
+## For the backend:
 
 bash
 Copy code
