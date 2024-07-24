@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+SisterHoop
+Introduction
+SisterHoop is a web application designed to connect female basketball players, offering a supportive environment where they can find local courts, join pickup games, and connect with other players. The platform aims to enhance the basketball experience for women by providing a space free from competition and overshadowing. 🚀🏀
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Check out the deployed site here and read the final project blog article for more details.
 
-## Available Scripts
+Author(s)
+[My LinkedIn Profile](https://www.linkedin.com/in/abayo-akinyi/)
+Installation
+To get started with SisterHoop locally, follow these steps:
 
-In the project directory, you can run:
+Clone the Repository:
 
-### `npm start`
+bash
+Copy code
+git clone https://github.com/your-repository-url.git
+Navigate to the Project Directory:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+bash
+Copy code
+cd sisterhoop
+Install Dependencies:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+For the frontend:
 
-### `npm test`
+bash
+Copy code
+cd frontend
+yarn install
+For the backend:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+bash
+Copy code
+cd ../backend
+npm install
+Set Up Environment Variables:
 
-### `npm run build`
+Create a .env file in both frontend and backend directories with the required environment variables (see .env.example for a template).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Run the Application:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Start the backend server:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+bash
+Copy code
+npm start
+Start the frontend development server:
 
-### `npm run eject`
+bash
+Copy code
+cd ../frontend
+yarn start
+Usage
+Frontend: Access the application at http://localhost:3000 to interact with the user interface.
+Backend: The API runs on http://localhost:5000 and handles all data processing and storage.
+Contributing
+We welcome contributions to SisterHoop! To contribute:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Fork the repository.
+Create a new branch (git checkout -b feature-branch).
+Make your changes and commit them (git commit -am 'Add new feature').
+Push to the branch (git push origin feature-branch).
+Open a Pull Request.
+Related Projects
+Project A - Description of Project A.
+Project B - Description of Project B.
+Licensing
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Screenshot
