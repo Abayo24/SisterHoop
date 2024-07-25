@@ -1,70 +1,116 @@
-# Getting Started with Create React App
+# SisterHoop
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![banner](https://github.com/user-attachments/assets/565b0852-1616-43dd-b26a-096a4d6db5cd)
 
-## Available Scripts
+SisterHoop is a platform designed to connect female basketball players, providing a safe and encouraging environment where they can find local courts, join pickup games, and interact with other female athletes. The project was born out of my personal experience as a female basketball enthusiast who often felt sidelined in a predominantly male environment. SisterHoop is built to ensure that women can enjoy basketball without feeling overshadowed or excluded.
 
-In the project directory, you can run:
+# 🛠️ Installation
+To set up the project locally, follow these steps:
 
-### `npm start`
+## Clone the Repository:
+Copy code
+git clone https://github.com/yourusername/sisterhoop.git
+Navigate to the Project Directory:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Install Dependencies:
+### For frontend:
+cd sisterhoop
+yarn add
+react - The core library for building user interfaces.
+react-dom - Provides DOM-specific methods that can be used at the top level of your app.
+react-router-dom - Declarative routing for React.js.
+bootstrap - CSS framework for responsive design.
+react-bootstrap - Bootstrap components for React.
+leaflet - Library for interactive maps.
+react-leaflet - React wrapper for Leaflet.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### For backend:
+cd ../backend
+yarn add
+axios - Promise-based HTTP client for making requests to the backend.
+dotenv - Module to load environment variables from a .env file.
+mysql2 - MySQL client for Node.js.
+cors - Package to enable Cross-Origin Resource Sharing.
+nodemon - Tool for automatically restarting the Node.js application when file changes are detected.
+eslint - Linter for JavaScript code.
+react-scripts - Scripts and configuration used by Create React App.
+Set Up Environment Variables:
+Create a .env file in the backend directory and add your environment variables (e.g., database connection strings, API keys).
 
-### `npm test`
+## Run Migrations:
+cd ../backend
+npx sequelize-cli db:migrate
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Start the Application:
+### Frontend:
+cd sisterhood
+yarn start
+### Backend:
+cd ../backend
+yarn start
 
-### `npm run build`
+## 🚀 Usage
+Once the application is running:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Open the Frontend: Navigate to http://localhost:3000 in your browser to access the application.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Explore Features:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Map Integration: Search for and view basketball courts with interactive markers.
+User Profiles: Create and manage profiles to connect with other players.
+Game Scheduling: Organize and join pickup games based on your location and preferences.
 
-### `npm run eject`
+## 🤝 Contributing
+Contributions are welcome! Please follow these steps to contribute:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Fork the Repository:
+Click the "Fork" button on the top-right of the repository page.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Clone Your Fork:
+Copy code
+git clone https://github.com/yourusername/sisterhoop.git
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### Create a New Branch:
+git checkout -b feature/new-feature
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### Make Your Changes and Commit:
+Copy code
+git add .
+git commit -m "Add new feature"
 
-## Learn More
+#### Push Your Changes:
+Copy code
+git push origin feature/new-feature
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Create a Pull Request:
+Go to the repository on GitHub and create a pull request with a detailed description of your changes.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📜 License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-### Code Splitting
+## 🖼️ Screenshots
+![sisterhood1](https://github.com/user-attachments/assets/385f69fc-ec8c-47b0-8408-0a3d5bfb1f35)
+![court details](https://github.com/user-attachments/assets/7e6eef76-593b-4da9-b28c-fa6fe394b514)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📖 Technical Details
+### Backend:
 
-### Analyzing the Bundle Size
+Node.js & Express: Chosen for its non-blocking I/O and real-time capabilities, ideal for the dynamic nature of our app.
+MySQL: Selected for its ACID compliance and strong consistency, suitable for structured data like user profiles and game schedules.
+Frontend:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+React: Used for building a dynamic and interactive user interface.
+Leaflet: Integrated with OpenStreetMap to provide interactive and customizable map features.
+Technical Challenge:
+Early on, I faced challenges with integrating Google Maps API due to billing issues. This led to switching to OpenStreetMap, which required adapting our application to handle asynchronous data and dynamic markers. Despite the hurdles, the switch allowed for a more flexible and cost-effective solution.
 
-### Making a Progressive Web App
+## 💬 Personal Story
+SisterHoop emerged from my own experience as a female basketball player often overshadowed in a male-dominated environment. Each visit to the court where I was either alone or with just one other female sparked the idea to create a platform where women could feel more included and supported. Building SisterHoop as a solo developer was a journey through frontend and backend development, database management, and more. It solidified my passion for creating user-friendly applications and inspired me to tackle future projects with confidence.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 👩‍💻 Author
+[Abayo Akinyi - LinkedIn](https://www.youtube.com/watch?v=XyHkoKwPtaw)
+## 🌐 Deployed Project
+[SisterHoop Live](https://abayo24.github.io/SisterHoop/)
+## 📝 Blog Article
+[Final Project Blog Article](https://medium.com/@akinyi.dev/building-sisterhoop-bridging-the-gap-for-female-basketball-players-caccc9c509a2)
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
