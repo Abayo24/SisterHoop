@@ -161,14 +161,14 @@ const Member = () => {
               <img src={umoja} alt="court" className="card-img-top img-fluid h-50"/>
               <div className="card-body">
                 <h5 className="card-title text-center">Umoja 2</h5>
-                <p className="card-text">
+                <div className="card-text">
                   <ul className="list-group list-group-flush">
                     <li className="list-group-item">Location: Nairobi, Kenya</li>
                     <li className="list-group-item">Description: Full Court</li>
                     <li className="list-group-item">Availability: Available</li>
                   </ul>
-                </p>
-                <div class="d-flex justify-content-center">
+                </div>
+                <div className="d-flex justify-content-center">
                   <button type="button" className="btn btn-dark text-center">View Court Details</button>
                 </div>
               </div>
@@ -179,14 +179,14 @@ const Member = () => {
               <img src={nyayo} alt="court" className="card-img-top img-fluid h-50" />
               <div className="card-body">
                 <h5 className="card-title text-center">Nyayo Stadium</h5>
-                <p className="card-text">
+                <div className="card-text">
                   <ul className="list-group list-group-flush">
                     <li className="list-group-item">Location: Nairobi, Kenya</li>
                     <li className="list-group-item">Description: Full Court</li>
                     <li className="list-group-item">Availability: Available</li>
                   </ul>
-                </p>
-                <div class="d-flex justify-content-center">
+                </div>
+                <div className="d-flex justify-content-center">
                   <button type="button" className="btn btn-dark text-center">View Court Details</button>
                 </div>
               </div>
@@ -197,14 +197,14 @@ const Member = () => {
               <img src={down} alt="court" className="card-img-top img-fluid h-50" />
               <div className="card-body">
                 <h5 className="card-title text-center">Down Court</h5>
-                <p className="card-text">
+                <div className="card-text">
                   <ul className="list-group list-group-flush">
                     <li className="list-group-item">Location: Nairobi, Kenya</li>
                     <li className="list-group-item">Description: Full Court</li>
                     <li className="list-group-item">Availability: Available</li>
                   </ul>
-                </p>
-                <div class="d-flex justify-content-center">
+                </div>
+                <div className="d-flex justify-content-center">
                   <button type="button" className="btn btn-dark text-center">View Court Details</button>
                 </div>
               </div>

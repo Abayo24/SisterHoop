@@ -5,6 +5,9 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Member from './pages/Member';
+import Game from './pages/Game';
+import AddGame from './pages/AddGame';
+import Update from './pages/Update';
 import { BrowserRouter as Router, Route, Routes, Navigate, useNavigate } from 'react-router-dom';
 
 function App() {
@@ -27,6 +30,9 @@ function App() {
           <Route path='/SisterHoop/login' element={isAuthenticated ? <Navigate to="/SisterHoop/member" /> : <Login setIsAuthenticated={setIsAuthenticated} />} />
           <Route path='/SisterHoop/signup' element={<Signup />} />
           <Route path='/SisterHoop/member' element={isAuthenticated ? <Member /> : <Navigate to="/SisterHoop/login" />} />
+          <Route path='/SisterHoop/games' element={<Game />} />
+          <Route path='/SisterHoop/addGame' element={<AddGame />} />
+          <Route path='/SisterHoop/update/:id' element={<Update />} />
         </Routes>
       </Router>
     </div>

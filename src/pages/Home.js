@@ -60,9 +60,8 @@ const Home = () => {
               title="Sisterhoop Seach Feature"
               width="800"
               height="450"
-              src="https://www.youtube.com/watch?v=A9yEk8DtxNI"
-              frameborder="0"
-              allowfullscreen
+              src="https://www.youtube.com//embed/A9yEk8DtxNI"
+              allowFullScreen
             ></iframe>
           </div>
         </div>
@@ -71,16 +70,16 @@ const Home = () => {
             <h1 className="fw-bold p-5" id="about">
               Story Behind SisterHoop
             </h1>
-            <div class="container text-center">
-              <div class="row align-items-center">
-                <div class="col">
+            <div className="container text-center">
+              <div className="row align-items-center">
+                <div className="col">
                   <img
                     src={fmp}
                     className="rounded"
                     alt="people playing bball"
                   />
                 </div>
-                <div class="col m-4 p-5">
+                <div className="col m-4 p-5">
                   <p>
                     SisterHoop was born from a personal experience that
                     highlighted a significant gap in the basketball community.

@@ -40,7 +40,7 @@ function Navbar({ isAuthenticated, onLogout }) {
             <>
               <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <Link to="/SisterHoop" className="nav-link">
+                  <Link to="/SisterHoop/member" className="nav-link">
                     Home
                   </Link>
                 </li>

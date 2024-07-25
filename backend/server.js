@@ -10,6 +10,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 8081;
 const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret';
+const games = [];
 
 app.use(cors({
     origin: 'http://localhost:3000', // Frontend URL
@@ -23,7 +24,7 @@ const db = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "abayo",
-  database: "signup",
+  database: "sisterhoop",
 });
 
 db.connect((err) => {
@@ -89,6 +90,73 @@ const authenticateJWT = (req, res, next) => {
 // Example of a protected route
 app.get("/protected", authenticateJWT, (req, res) => {
   res.json({ message: "This is a protected route", user: req.user });
+});
+
+app.get('/games', (req, res) => {
+  const query = 'SELECT * FROM games';
+  db.query(query, (err, data) => {
+    if (err) {
+      return res.status(500).json(err);
+    }
+    return res.json(data);
+  });
+});
+
+app.get('/games/:id', (req, res) => {
+  const gameId = req.params.id;
+  const query = 'SELECT * FROM games WHERE id = ?';
+  
+  db.query(query, [gameId], (err, data) => {
+    if (err) return res.status(500).json(err);
+    if (data.length === 0) return res.status(404).json("Game not found");
+    return res.json(data[0]);
+  });
+});
+
+
+app.post("/games", (req,res)=>{
+  const q = "INSERT INTO games (`date`, `time`, `court`, `game_type`) VALUES (?)";
+  const values = [
+    req.body.date,
+    req.body.time,
+    req.body.court,
+    req.body.game_type,
+  ];
+
+  console.log("Insert query:", q);
+  console.log("Insert values:", values);
+
+  db.query(q, [values], (err,data)=>{
+    if(err) return res.json(err);
+    return res.json("game has been created successfully")
+  });
+});
+
+app.delete("/games/:id", (req,res)=>{
+  const gameId = req.params.id;
+  const q = "DELETE FROM games WHERE id = ?"
+
+  db.query(q, [gameId], (err,data)=>{
+    if(err) return res.json(err);
+      return res.json("game has been deleted successfully")
+  });
+});
+
+app.put("/games/:id", (req,res)=>{
+  const gameId = req.params.id;
+  const q = "UPDATE games SET `date` = ?, `time` = ?, `court` = ?, `game_type` = ? WHERE id = ?";
+
+  const values = [
+    req.body.date,
+    req.body.time,
+    req.body.court,
+    req.body.game_type,
+  ];
+
+  db.query(q, [...values,gameId], (err,data)=>{
+    if(err) return res.json(err);
+      return res.json("game has been updated successfully")
+  });
 });
 
 app.listen(PORT, () => {
