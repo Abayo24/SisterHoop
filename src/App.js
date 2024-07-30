@@ -26,13 +26,13 @@ function App() {
       <Router>
         <NavbarWrapper isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
         <Routes>
-          <Route path='/sisterhoop-1.onrender' element={<Home />} />
-          <Route path='/sisterhoop-1.onrender/login' element={isAuthenticated ? <Navigate to="/SisterHoop/member" /> : <Login setIsAuthenticated={setIsAuthenticated} />} />
-          <Route path='/sisterhoop-1.onrender/signup' element={<Signup />} />
-          <Route path='/sisterhoop-1.onrender/member' element={isAuthenticated ? <Member /> : <Navigate to="/SisterHoop/login" />} />
-          <Route path='/sisterhoop-1.onrender/games' element={<Game />} />
-          <Route path='/sisterhoop-1.onrenderp/addGame' element={<AddGame />} />
-          <Route path='/sisterhoop-1.onrender/update/:id' element={<Update />} />
+          <Route path='/' element={<Home />} />
+          <Route path='/login' element={isAuthenticated ? <Navigate to="/SisterHoop/member" /> : <Login setIsAuthenticated={setIsAuthenticated} />} />
+          <Route path='/signup' element={<Signup />} />
+          <Route path='/member' element={isAuthenticated ? <Member /> : <Navigate to="/SisterHoop/login" />} />
+          <Route path='/games' element={<Game />} />
+          <Route path='/addGame' element={<AddGame />} />
+          <Route path='/update/:id' element={<Update />} />
         </Routes>
       </Router>
     </div>
