@@ -26,13 +26,13 @@ function App() {
       <Router>
         <NavbarWrapper isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
         <Routes>
-          <Route path='/SisterHoop' element={<Home />} />
-          <Route path='/SisterHoop/login' element={isAuthenticated ? <Navigate to="/SisterHoop/member" /> : <Login setIsAuthenticated={setIsAuthenticated} />} />
-          <Route path='/SisterHoop/signup' element={<Signup />} />
-          <Route path='/SisterHoop/member' element={isAuthenticated ? <Member /> : <Navigate to="/SisterHoop/login" />} />
-          <Route path='/SisterHoop/games' element={<Game />} />
-          <Route path='/SisterHoop/addGame' element={<AddGame />} />
-          <Route path='/SisterHoop/update/:id' element={<Update />} />
+          <Route path='/sisterhoop-1.onrender' element={<Home />} />
+          <Route path='/sisterhoop-1.onrender/login' element={isAuthenticated ? <Navigate to="/SisterHoop/member" /> : <Login setIsAuthenticated={setIsAuthenticated} />} />
+          <Route path='/sisterhoop-1.onrender/signup' element={<Signup />} />
+          <Route path='/sisterhoop-1.onrender/member' element={isAuthenticated ? <Member /> : <Navigate to="/SisterHoop/login" />} />
+          <Route path='/sisterhoop-1.onrender/games' element={<Game />} />
+          <Route path='/sisterhoop-1.onrenderp/addGame' element={<AddGame />} />
+          <Route path='/sisterhoop-1.onrender/update/:id' element={<Update />} />
         </Routes>
       </Router>
     </div>

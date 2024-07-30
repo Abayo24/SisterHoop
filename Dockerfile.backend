@@ -1,0 +1,12 @@
+FROM node:20-alpine
+
+WORKDIR /sisterhood
+
+COPY package.json yarn.lock ./
+RUN yarn install
+
+COPY . .
+
+EXPOSE 8081
+
+CMD ["node", "server.js"]
